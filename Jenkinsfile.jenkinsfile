@@ -11,7 +11,7 @@ pipeline {
                 echo 'this print is only in main branch'
             }
         }
-        stage('Hello') {
+        stage('Hello fix') {
             when {
             branch 'fix-123'
             }
