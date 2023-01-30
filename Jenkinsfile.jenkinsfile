@@ -1,0 +1,24 @@
+pipeline {
+    agent {label 'built-in'}
+
+    stages {
+        stage('Hello') {
+            when {
+            branch 'main'
+            }
+            steps {
+                echo 'Hello World main'
+                echo 'this print is only in main branch'
+            }
+        }
+        stage('Hello fix') {
+            when {
+            branch 'fix-123'
+            }
+            steps {
+                echo 'Hello World fix-123'
+                echo 'this print is only in fix-123 branch'
+            }
+        }
+    }
+}
