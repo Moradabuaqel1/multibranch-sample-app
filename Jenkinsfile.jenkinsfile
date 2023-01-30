@@ -3,8 +3,12 @@ pipeline {
 
     stages {
         stage('Hello') {
+            when {
+            branch 'main'
+            }
             steps {
-                echo 'Hello World'
+                echo 'Hello World main'
+                echo 'this print is only in main branch'
             }
         }
     }
