@@ -11,5 +11,14 @@ pipeline {
                 echo 'this print is only in main branch'
             }
         }
+        stage('Hello') {
+            when {
+            branch 'fix-123'
+            }
+            steps {
+                echo 'Hello World fix-123'
+                echo 'this print is only in fix-123 branch'
+            }
+        }
     }
 }
