@@ -3,6 +3,14 @@ pipeline {
 
     stages {
         stage('Hello') {
+            when {
+            branch 'main'
+            }
+            steps {
+                echo 'Hello World main'
+                echo 'this print is only in main branch'
+            }
+        stage('Hello world') {
             steps {
                 echo 'Hello World-fix-branch'
             }
